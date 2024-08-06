@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "781816605893",
+    "project_id": "nhri-bpsd",
+    "storage_bucket": "nhri-bpsd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781816605893:android:26b196e8a28e6954f814ac",
+        "android_client_info": {
+          "package_name": "com.dilab.bpsd_warning"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_muqhc4kCS7RPa0BtZ845UUcKiv2LUs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

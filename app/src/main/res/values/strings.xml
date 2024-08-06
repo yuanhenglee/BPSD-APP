@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">BPSD Warning System</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Setting</string>
+
+    <string name="menu_account">Account</string>
+    <string name="menu_log">History Warnings</string>
+    <string name="logout">Log out</string>
+    <string name="reset_password">Reset password</string>
+    <string name="reset_password_sent">Reset mail has been sent.</string>
+    <string name="failed_to_send_reset_password_email">Failed to send reset mail.</string>
+    <string name="password">Password</string>
+    <string name="show_password">Show password</string>
+    <string name="login">Login</string>
+    <string name="welcome_to_bpsd_warning_app">Welcome to BPSD Warning App</string>
+    <string name="nav_header_subtitle">nav_header_subtitle</string>
+    <string name="select_device">Device</string>
+    <string name="username">Username</string>
+    <string name="sync_log">Sync Log</string>
+    <string name="clear_log">Clear Log</string>
+    <string name="more_details">More Details</string>
+</resources>

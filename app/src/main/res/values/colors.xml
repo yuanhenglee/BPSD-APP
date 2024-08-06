@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#FFEEEEEE</color>
+    <color name="text_color">#FF686D76</color>
+    <color name="text_color_dark">#FF373A40</color>
+    <color name="orange_200">#FFFFCC80</color>
+    <color name="orange_500">#FFFF9800</color>
+    <color name="orange_800">#FFEF6C00</color>
+    <color name="brown_200">#FFBCAAA4</color>
+    <color name="brown_500">#FF795548</color>
+    <color name="brown_800">#FF5D4037</color>
+</resources>

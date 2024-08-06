@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/round_rect_shape"
+    android:layout_margin="4dp"
+    android:padding="12dp">
+
+        <TextView
+            android:id="@+id/logTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/logBodyTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bodyadfsdfajsdl;fkjasldffasdfasdfasdfasdfasdfasdfasdfasdfasdfsdfasdfas"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/logTimeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="2024-05-26 12:00:00"
+            android:textSize="12sp" />
+
+</LinearLayout>
