@@ -10,11 +10,13 @@ import org.json.JSONObject
 import java.io.File
 import java.util.LinkedList
 import java.io.IOException
+import java.util.concurrent.locks.ReentrantLock
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
 
 class LogManager(private val context: Context) {
+    private val fileLock = ReentrantLock()
     private var logList = LinkedList<LogItem>()
     private var logFile: File
 
@@ -81,7 +83,9 @@ class LogManager(private val context: Context) {
                         LogItem(logs.getJSONObject(i))
                     }
                 )
+            Thread {
                 list2File()
+            }.start()
                 // Ensure UI update on main thread
                 Handler(Looper.getMainLooper()).post {
                     adapter.notifyDataSetChanged()
@@ -93,24 +97,34 @@ class LogManager(private val context: Context) {
     }
 
     private fun list2File() {
-        val logs = JSONArray(
-            logList.map { it.toJson() }
-        )
-        val logJson = JSONObject()
-        logJson.put("logs", logs)
-        logFile.writeText(logJson.toString())
+        fileLock.lock()
+        try {
+            val logs = JSONArray(
+                logList.map { it.toJson() }
+            )
+            val logJson = JSONObject()
+            logJson.put("logs", logs)
+            logFile.writeText(logJson.toString())
+        } finally {
+            fileLock.unlock()
+        }
     }
 
     private fun file2List() {
-        logList.clear()
-        logFile.readText().let {
-            val logJson = JSONObject(it)
-            val logs = logJson.getJSONArray("logs")
-            logList.addAll(
-                (0 until logs.length()).map { i ->
-                    LogItem(logs.getJSONObject(i))
-                }
-            )
+        fileLock.lock()
+        try {
+            logList.clear()
+            logFile.readText().let {
+                val logJson = JSONObject(it)
+                val logs = logJson.getJSONArray("logs")
+                logList.addAll(
+                    (0 until logs.length()).map { i ->
+                        LogItem(logs.getJSONObject(i))
+                    }
+                )
+            }
+        } finally {
+            fileLock.unlock()
         }
     }
 }
